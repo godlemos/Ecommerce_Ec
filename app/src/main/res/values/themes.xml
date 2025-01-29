@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.TiendaVirtualAppKotlin2" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Personaliza tu tema aquí. -->
+        <item name="colorPrimary">@color/celeste_oscuro</item>
+        <item name="colorPrimaryContainer">@color/celeste_claro</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnSecondary">@color/black</item>
+    </style>
+
+    <!-- Tema principal que usarás en el AndroidManifest.xml -->
+    <style name="Theme.TiendaVirtualAppKotlin2" parent="Base.Theme.TiendaVirtualAppKotlin2" />
+</resources>

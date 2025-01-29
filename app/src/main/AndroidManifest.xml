@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage"/>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/tienda_icono"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/tienda_icono_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TiendaVirtualAppKotlin2"
+        tools:targetApi="31">
+        <activity
+            android:name=".Vendedor.Productos.AgregarProductoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SeleccionarTipoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Cliente.LoginClienteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Cliente.RegistroClienteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Vendedor.LoginVendedorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Vendedor.RegistroVendedorActivity"
+            android:exported="false" /> <!-- SplashActivity configurada como la actividad principal -->
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- MainActivityVendedor como actividad secundaria -->
+        <activity
+            android:name=".Vendedor.MainActivityVendedor"
+            android:exported="true" /> <!-- MainActivity como actividad secundaria -->
+        <activity
+            android:name=".Cliente.MainActivityCliente"
+            android:exported="true" />
+    </application>
+
+</manifest>

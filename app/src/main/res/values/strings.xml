@@ -1,0 +1,83 @@
+<resources>
+    <string name="app_name">Tienda Virtual App - Kotlin2</string>
+    <string name="open_drawer">Open drawer</string>
+    <string name="close_drawer">Close drawer</string>
+
+    <string name="tipoVendedor">Vendedor</string>
+    <string name="tipoCliente">Cliente</string>
+
+
+    <string name="splash_image_desc">Logo de la Tienda Virtual</string>
+
+    <!--Navigation Drawer Vendedor -->
+
+    <string name="op_inicio_v">Inicio</string>
+    <string name="op_mi_tienda_v">Mi tienda</string>
+    <string name="op_resenia_v">Reseñas</string>
+    <string name="op_cerrar_sesion_v">Cerrar sesion</string>
+
+    <!--Navigation Drawer Cliente -->
+    <string name="op_inicio_c">Inicio</string>
+    <string name="op_mi_perfil_c">Mi Perfil</string>
+    <string name="op_cerrar_sesion_c">Cerrar sesion</string>
+
+    <!--Bottom Navigation Bar Vendedor-->
+
+    <string name="op_mis_productos_v">Mis productos</string>
+    <string name="op_mis_ordenes_v">Ordenes</string>
+
+    <!--Bottom Navigation Bar Cliente-->
+    <string name="op_tienda_c">Tienda</string>
+    <string name="op_mis_ordenes_c">Mis ordenes</string>
+
+    <string name="txt_bienvenida">Bienvenido(a)</string>
+
+
+    <!--Registro de vendedor-->
+    <string name="txtRegistroV">Registro de vendedor</string>
+    <string name="etNombresV">Nombres completos</string>
+    <string name="etEmail">Email</string>
+    <string name="etPassword">Password</string>
+    <string name="etCPassword">Confirmar password</string>
+    <string name="btnRegistarV">Registrarme</string>
+
+
+    <!--Registro de clientes-->
+    <string name="txtRegistroC">Registro de cliente</string>
+    <string name="etNombresC">Nombres completos</string>
+    <string name="btnRegistrarC">Registarme</string>
+
+
+    <!--Login de vendedor-->
+    <string name="txtLoginV">Login de vendedor</string>
+    <string name="btnLoginV">Ingresar</string>
+    <string name="txtNoCuenta">¿No tienes una cuenta?</string>
+    <string name="tvRegistrarV">Registrarme</string>
+
+    <!--Login de cliente-->
+    <string name="txtLoginC">Login de cliente</string>
+    <string name="btnLoginC">Ingresar</string>
+    <string name="tvRegistrarC">Registrarme</string>
+
+    <!--Productos-->
+    <string name="txtAgregarProductos">Agregar productos</string>
+    <string name="etNombresP">Nombre del producto</string>
+    <string name="etDescripcionP">Descripcion</string>
+    <string name="Categoria">Categoria</string>
+    <string name="etPrecioP">Precio</string>
+    <string name="txtDescuento">Descuento</string>
+    <string name="etPrecioConDescuentoP">Precio con descuento apli.</string>
+    <string name="etNotaDescuentoP">Ejm: 10% Desc.</string>
+    <string name="btnAgregarProducto">Agregar producto</string>
+
+
+
+
+
+
+
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
