@@ -10,6 +10,11 @@ import java.util.Locale
 
 class Constantes {
 
+    //COMENTARIO DESDE MI PC MASTER MUY BUEN TRABAJO
+
+
+
+
     fun obtenerTiempoD() : Long{
         return System.currentTimeMillis()
     }
