@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <!--Nombre del usuario-->
+        <TextView
+            android:id="@+id/tvNombreUsuarioCal"
+            android:text="@string/tvNombreUsuarioCal"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!--Rating bar-->
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:numStars="5"
+            android:stepSize="1"
+            android:rating="0"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:progressTint="@android:color/holo_orange_light"
+            android:progressBackgroundTint="@android:color/darker_gray" />
+
+        <!--Reseña-->
+        <TextView
+            android:id="@+id/tvReseniaCal"
+            android:text="@string/tvReseniaCal"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+
+</com.google.android.material.card.MaterialCardView>

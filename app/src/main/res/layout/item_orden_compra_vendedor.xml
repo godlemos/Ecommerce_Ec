@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <!--Id de la orden-->
+        <TextView
+            android:id="@+id/idOrdenItem"
+            android:text="@string/idOrdenItem"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!--Fecha de la orden-->
+        <TextView
+            android:id="@+id/fechaOrdenItem"
+            android:text="@string/fechaOrdenItem"
+            android:layout_toStartOf="@+id/ibSiguiente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!--Cliente que realizó la orden-->
+        <TextView
+            android:id="@+id/clienteOrdenItem"
+            android:text="Cliente: Nombre del cliente"
+            android:layout_below="@+id/idOrdenItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!--Estado de la orden-->
+        <TextView
+            android:id="@+id/estadoOrdenItem"
+            android:text="@string/estadoOrdenItem"
+            android:textStyle="bold"
+            android:layout_below="@+id/clienteOrdenItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!--Costo de la orden-->
+        <TextView
+            android:id="@+id/costoOrdenItem"
+            android:text="@string/costoOrdenItem"
+            android:layout_below="@id/estadoOrdenItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!--Botón para cambiar estado-->
+        <Button
+            android:id="@+id/btnCambiarEstado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cambiar Estado"
+            android:layout_below="@id/costoOrdenItem"
+            android:layout_alignParentEnd="true"
+            android:textSize="12sp"
+            android:padding="8dp"/>
+
+        <ImageButton
+            android:id="@+id/ibSiguiente"
+            android:src="@drawable/ico_siguiente"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView> 

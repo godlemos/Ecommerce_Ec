@@ -1,0 +1,7 @@
+<application
+    android:name=".MyApplication">
+    
+    <activity
+        android:name=".Calificacion.MostrarCalificacionesActivity"
+        android:exported="false" />
+</application> 
