@@ -1,17 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Cliente.Bottom_Nav_Fragments_Cliente.FragmentTiendaC">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!--Mensaje de bienvenida-->
     <TextView
+        android:id="@+id/bienvenidaTXT"
+        android:text="@string/bienvenidaTXT"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!--Mi dirección-->
+    <TextView
+        android:id="@+id/direccionTXT"
+        android:text="@string/direccionTXT"
+        app:drawableStartCompat="@drawable/gps"
+        android:drawablePadding="5dp"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!--Productos aleatorios-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/productosAleatRV"
+        tools:listitem="@layout/item_producto_aleatorio"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <!--TXT Categorias-->
+    <TextView
+        android:text="@string/txtCategorias"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:textColor="@color/azul_marino_oscuro"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!--Categorias de los productos-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/categoriasRV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="TIENDA"
-        android:gravity="center"
-        android:textSize="25sp"
-        android:textStyle="bold"/>
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        tools:listitem="@layout/item_categoria_c"/>
 
-</FrameLayout>
+</LinearLayout>

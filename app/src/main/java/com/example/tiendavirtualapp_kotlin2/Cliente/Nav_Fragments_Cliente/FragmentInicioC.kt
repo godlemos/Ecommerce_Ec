@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.tiendavirtualapp_kotlin2.Cliente.Bottom_Nav_Fragments_Cliente.FragmentCarritoC
+import com.example.tiendavirtualapp_kotlin2.Cliente.Bottom_Nav_Fragments_Cliente.FragmentFavoritosC
 import com.example.tiendavirtualapp_kotlin2.Cliente.Bottom_Nav_Fragments_Cliente.FragmentMisOrdenesC
 import com.example.tiendavirtualapp_kotlin2.Cliente.Bottom_Nav_Fragments_Cliente.FragmentTiendaC
 import com.example.tiendavirtualapp_kotlin2.R
@@ -22,7 +24,12 @@ class FragmentInicioC : Fragment() {
             when(it.itemId){
                 R.id.op_tienda_c->{
                     replaceFragment(FragmentTiendaC())
-
+                }
+                R.id.op_favoritos_c->{
+                    replaceFragment(FragmentFavoritosC())
+                }
+                R.id.op_carrito_c->{
+                    replaceFragment(FragmentCarritoC())
                 }
                 R.id.op_mis_ordenes_c->{
                     replaceFragment(FragmentMisOrdenesC())

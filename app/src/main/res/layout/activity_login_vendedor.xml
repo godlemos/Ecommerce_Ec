@@ -1,104 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Vendedor.LoginVendedorActivity">
+    android:background="@color/white">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="15dp">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:text="@string/txtLoginV"
-            android:layout_gravity="center"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:src="@drawable/login_vendedor"
-            android:layout_width="80dp"
-            android:layout_height="80dp"/>
-
-        <!--Email-->
-
-        <com.google.android.material.textfield.TextInputLayout
+        <!-- Header con imagen y títulos -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/headerCard"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="200dp"
+            app:cardBackgroundColor="@color/celeste_oscuro"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="0dp">
 
-            <EditText
-                android:id="@+id/etEmail"
-                android:hint="@string/etEmail"
-                android:drawableStart="@drawable/ico_email"
-                android:drawablePadding="10dp"
-                android:inputType="textEmailAddress"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/vendedor"/>
 
-        <!--Password-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txtLoginV"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="16dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-        <com.google.android.material.textfield.TextInputLayout
+        <!-- Formulario de login -->
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:passwordToggleEnabled="true">
+            android:layout_below="@id/headerCard"
+            android:layout_marginTop="-32dp"
+            android:layout_marginHorizontal="24dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp">
 
-            <EditText
-                android:id="@+id/etPassword"
-                android:hint="@string/etPassword"
-                android:drawableStart="@drawable/ico_password"
-                android:drawablePadding="10dp"
-                android:inputType="textPassword"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <!-- Email -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:startIconDrawable="@drawable/ico_nombres"
+                    app:startIconTint="@color/celeste_oscuro"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-        <!--Boton Login-->
+                    <EditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/etEmail"
+                        android:inputType="textEmailAddress"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnLoginV"
-            android:text="@string/btnLoginV"
-            android:textAllCaps="true"
-            app:cornerRadius="8dp"
-            android:layout_marginTop="15dp"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <!--Pregunta-->
-        
-        <TextView
-            android:text="@string/txtNoCuenta"
-            android:layout_gravity="end"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <!--Registrar vendedor-->
+                <!-- Password -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:startIconDrawable="@drawable/ico_nombres"
+                    app:startIconTint="@color/celeste_oscuro"
+                    app:passwordToggleEnabled="true"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-        <TextView
-            android:id="@+id/tvRegistrarV"
-            android:text="@string/tvRegistrarV"
-            android:textStyle="bold"
-            android:textColor="@color/celeste_oscuro"
-            android:layout_gravity="end"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+                    <EditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/etPassword"
+                        android:inputType="textPassword"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
+                <!-- Botón de Login -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLoginV"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="@string/btnLoginV"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    android:layout_marginTop="24dp"
+                    app:cornerRadius="8dp"/>
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+                <!-- Texto y botón de registro -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginTop="24dp"
+                    android:visibility="gone">
 
-</RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/txtNoCuenta"
+                        android:textColor="@android:color/darker_gray"/>
+
+                    <TextView
+                        android:id="@+id/tvRegistrarV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvRegistrarV"
+                        android:textStyle="bold"
+                        android:textColor="@color/celeste_oscuro"
+                        android:layout_marginTop="8dp"
+                        android:textSize="16sp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</ScrollView>

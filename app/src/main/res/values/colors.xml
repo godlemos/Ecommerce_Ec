@@ -3,6 +3,14 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="celeste_claro">#85c1e9</color>
-    <color name="celeste_oscuro">#5DADE2</color>
+    <color name="celeste_oscuro">#1E88E5</color>
     <color name="azul_marino_oscuro">#2471A3</color>
+    <color name="verde_oscuro">#EF9A9A</color>
+    <color name="verde_claro">#D32F2F</color>
+    <color name="naranja">#f39c12</color>
+    <color name="verde_oscuro2">#138d75</color>
+    <color name="rojo">#e74c3c</color>
+    <color name="morado">#8e44ad</color>
+    <color name="plomo">#34495e</color>
+
 </resources>

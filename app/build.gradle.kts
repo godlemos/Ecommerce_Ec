@@ -47,9 +47,18 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.firebaseAuth)
-    implementation(libs.firebaseDatabase)
-    implementation(libs.imagePicker)
+    implementation(libs.lottie)/*Animaciones*/
+    implementation(libs.firebaseAuth)/*Autenticacion con Firebase*/
+    implementation(libs.firebaseDatabase)/*Firebase*/
+    implementation(libs.imagePicker)/*Recortarimagenes*/
+    implementation(libs.glide)/*Leer imagenes*/
+    implementation(libs.storage)/*Subir archivo multimedia*/
+    implementation(libs.authGoogle)/*Iniciar sesion con google */
+    implementation(libs.ccp)/*Seleccionar codigo telefonico*/
+    implementation(libs.photoView)
+    implementation(libs.circleImage)
+    implementation(libs.maps)
+    implementation(libs.places)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:contentPadding="10dp"
+    app:cardCornerRadius="10dp"
+    android:layout_margin="10dp"
+    app:cardElevation="0dp">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imagenCategCV"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ico_nombres"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/item_nombre_c_v"
+            android:text="@string/item_nombre_c_v"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageButton
+            android:id="@+id/itemVerProductos"
+            android:src="@android:drawable/ic_menu_view"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="8dp"
+            android:visibility="gone"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
+        <ImageButton
+            android:id="@+id/itemActualizarCat"
+            android:src="@android:drawable/ic_menu_edit"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
+        <ImageButton
+            android:id="@+id/item_eliminar_c"
+            android:src="@drawable/ico_eliminar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</com.google.android.material.card.MaterialCardView>

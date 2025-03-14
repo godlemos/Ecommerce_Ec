@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--Primera imagen del producto seleccionado-->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imagenPCar"
+            android:src="@drawable/carrito_de_compras"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"/>
+
+        <!--Nombre del producto-->
+        <TextView
+            android:id="@+id/nombrePCar"
+            android:text="@string/nombrePCar"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/imagenPCar"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!--Descripción del producto-->
+        <TextView
+            android:id="@+id/descripcionPCar"
+            android:text="@string/descripcionPCar"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/nombrePCar"
+            android:layout_marginTop="5dp"
+            tools:text="@tools:sample/lorem[15]"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!--Nota del descuento-->
+        <TextView
+            android:id="@+id/notaDescPCar"
+            android:text="@string/notaDescPCar"
+            android:layout_alignParentEnd="true"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            android:background="@drawable/fondo_verde"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp">
+
+        <!--precio original-->
+        <TextView
+            android:id="@+id/precioOriginalPCar"
+            android:text="@string/precioOriginalPCar"
+            android:padding="10dp"
+            android:textAlignment="textStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!--Precio con descuento-->
+        <TextView
+            android:id="@+id/precioDescPCar"
+            android:text="@string/precioDescPCar"
+            android:padding="10dp"
+            android:layout_toEndOf="@id/precioOriginalPCar"
+            android:textAlignment="textStart"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!--Precio final-->
+        <TextView
+            android:id="@+id/precioFinalPCar"
+            android:text="@string/precioFinalPCar"
+            android:padding="10dp"
+            android:layout_alignParentEnd="true"
+            android:textAlignment="textStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp">
+
+        <!--Disminuir la cantidad de productos-->
+        <ImageButton
+            android:id="@+id/btnDisminuir"
+            android:src="@drawable/ico_disminuir"
+            android:background="@null"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!--Cantidad de productos-->
+        <TextView
+            android:id="@+id/cantidadPCar"
+            android:text="@string/cantidadPCar"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!--Incrementar la cantidad de productos-->
+        <ImageButton
+            android:id="@+id/btnAumentar"
+            android:src="@drawable/ico_incrementar"
+            android:background="@null"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAgregarCarrito"
+        android:text="@string/btnAgregarCarrito"
+        android:padding="5dp"
+        app:cornerRadius="0dp"
+        android:layout_marginTop="10dp"
+        android:textAllCaps="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

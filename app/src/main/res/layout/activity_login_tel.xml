@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:padding="15dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Cliente.LoginTelActivity">
+
+    <TextView
+        android:text="@string/txtLoginTelC"
+        android:layout_gravity="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/login_telefono"/>
+
+    <RelativeLayout
+        android:id="@+id/rlTelefono"
+        android:padding="10dp"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/TelCodePicker"
+            android:layout_marginEnd="8dp"
+            app:ccp_autoDetectCountry="true"
+            app:ccp_rememberLastSelection="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/etTelefonoC"
+            android:hint="@string/etTelefonoC"
+            android:layout_toEndOf="@id/TelCodePicker"
+            android:gravity="center"
+            android:inputType="phone"
+            android:minHeight="48dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEnviarCodigo"
+            android:text="@string/btnEnviarCodigo"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_below="@id/etTelefonoC"
+            android:textAllCaps="true"
+            app:cornerRadius="8dp"
+            android:layout_height="wrap_content"/>
+
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/rlCodigoVer"
+        android:visibility="visible"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/etCodVer"
+            android:hint="@string/etCodVer"
+            android:inputType="number"
+            android:gravity="center"
+            android:maxLength="6"
+            android:minHeight="48dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnVerificarCod"
+            android:text="@string/btnVerificarCod"
+            android:layout_marginTop="15dp"
+            android:textAllCaps="true"
+            app:cornerRadius="8dp"
+            android:layout_below="@id/etCodVer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/tvReenviarCod"
+            android:text="@string/tvReenviarCod"
+            android:layout_below="@id/btnVerificarCod"
+            android:layout_centerHorizontal="true"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

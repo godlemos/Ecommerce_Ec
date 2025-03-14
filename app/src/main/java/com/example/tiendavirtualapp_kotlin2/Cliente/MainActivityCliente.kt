@@ -18,6 +18,7 @@ import com.example.tiendavirtualapp_kotlin2.SeleccionarTipoActivity
 import com.example.tiendavirtualapp_kotlin2.databinding.ActivityMainClienteBinding
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
+import androidx.appcompat.app.AlertDialog
 
 class MainActivityCliente : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener {
 
@@ -31,8 +32,6 @@ class MainActivityCliente : AppCompatActivity() , NavigationView.OnNavigationIte
 
         firebaseAuth = FirebaseAuth.getInstance()
         comprobarSesion()
-
-
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -51,8 +50,15 @@ class MainActivityCliente : AppCompatActivity() , NavigationView.OnNavigationIte
         binding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
         
-        replaceFragment(FragmentInicioC())
-
+        // Verificar si se debe cargar un fragmento específico
+        val fragmentToLoad = intent.getStringExtra("fragmentToLoad")
+        if (fragmentToLoad == "misOrdenes") {
+            replaceFragment(FragmentMisOrdenesC())
+            // Marcar la opción correspondiente en el menú de navegación
+            binding.navigationView.setCheckedItem(R.id.op_mis_ordenes_c)
+        } else {
+            replaceFragment(FragmentInicioC())
+        }
     }
 
     private fun comprobarSesion(){
@@ -106,5 +112,16 @@ class MainActivityCliente : AppCompatActivity() , NavigationView.OnNavigationIte
         binding.drawerLayout.closeDrawer(GravityCompat.START)
         return true
 
+    }
+
+    override fun onBackPressed() {
+        AlertDialog.Builder(this)
+            .setTitle("Salir")
+            .setMessage("¿Estás seguro que deseas salir de la aplicación?")
+            .setPositiveButton("Sí") { _, _ ->
+                super.onBackPressed()
+            }
+            .setNegativeButton("No", null)
+            .show()
     }
 }

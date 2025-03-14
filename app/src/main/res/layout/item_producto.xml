@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="7dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--Nota del descuento-->
+            <TextView
+                android:id="@+id/item_nota_p"
+                android:text="@string/item_nota_p"
+                android:padding="5dp"
+                android:visibility="gone"
+                android:background="@drawable/fondo_verde"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <ImageButton
+                android:id="@+id/Ib_editar"
+                android:padding="7dp"
+                android:src="@drawable/ico_editar"
+                android:layout_toStartOf="@id/Ib_eliminar"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <ImageButton
+                android:id="@+id/Ib_eliminar"
+                android:layout_alignParentEnd="true"
+                android:background="@android:color/transparent"
+                android:padding="7dp"
+                android:src="@drawable/ico_eliminar_prod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imagenP"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/item_img_producto"
+            android:layout_gravity="center"
+            android:layout_marginTop="2dp"
+            android:scaleType="centerCrop"/>
+
+        <!--Nombre del producto-->
+        <TextView
+            android:id="@+id/item_nombre_p"
+            android:text="@string/item_nombre_p"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:maxLines="1"/>
+
+        <!--Categoría del producto-->
+        <TextView
+            android:id="@+id/item_categoria_p"
+            android:text="@string/item_categoria_p"
+            android:background="@drawable/fondo_plomo"
+            android:padding="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <!--Precio con descuento del producto-->
+            <TextView
+                android:id="@+id/item_precio_p_desc"
+                android:text="@string/item_precio_p_desc"
+                android:visibility="gone"
+                android:layout_marginEnd="10dp"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <!--Precio del producto-->
+            <TextView
+                android:id="@+id/item_precio_p"
+                android:text="@string/item_precio_p"
+                android:layout_toEndOf="@id/item_precio_p_desc"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+
+
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</com.google.android.material.card.MaterialCardView>

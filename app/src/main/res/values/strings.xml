@@ -1,5 +1,8 @@
 <resources>
-    <string name="app_name">Tienda Virtual App - Kotlin2</string>
+    <string name="app_name">Tienda Virtual</string>
+
+    <string name="mi_google_maps_api_key">AIzaSyC8t3YgEeEx2v4Xj7XLJUEghXgvbtLmgQE</string>
+
     <string name="open_drawer">Open drawer</string>
     <string name="close_drawer">Close drawer</string>
 
@@ -9,26 +12,28 @@
 
     <string name="splash_image_desc">Logo de la Tienda Virtual</string>
 
-    <!--Navigation Drawer Vendedor -->
-
+    <!--NavigationDrawer Vendedor-->
     <string name="op_inicio_v">Inicio</string>
     <string name="op_mi_tienda_v">Mi tienda</string>
+    <string name="op_categorias_v">Categorias</string>
+    <string name="op_productos_v">Productos</string>
     <string name="op_resenia_v">Reseñas</string>
-    <string name="op_cerrar_sesion_v">Cerrar sesion</string>
+    <string name="op_cerrar_sesion_v">Cerrar sesión</string>
 
-    <!--Navigation Drawer Cliente -->
+    <!--NavigationDrawer Cliente-->
     <string name="op_inicio_c">Inicio</string>
     <string name="op_mi_perfil_c">Mi Perfil</string>
-    <string name="op_cerrar_sesion_c">Cerrar sesion</string>
+    <string name="op_cerrar_sesion_c">Cerrar sesión</string>
 
     <!--Bottom Navigation Bar Vendedor-->
-
     <string name="op_mis_productos_v">Mis productos</string>
-    <string name="op_mis_ordenes_v">Ordenes</string>
+    <string name="op_mis_ordenes_v">Órdenes</string>
 
     <!--Bottom Navigation Bar Cliente-->
     <string name="op_tienda_c">Tienda</string>
-    <string name="op_mis_ordenes_c">Mis ordenes</string>
+    <string name="op_favoritos_c">Favoritos</string>
+    <string name="op_carrito_c">Carrito</string>
+    <string name="op_mis_ordenes_c">Mis órdenes</string>
 
     <string name="txt_bienvenida">Bienvenido(a)</string>
 
@@ -39,14 +44,12 @@
     <string name="etEmail">Email</string>
     <string name="etPassword">Password</string>
     <string name="etCPassword">Confirmar password</string>
-    <string name="btnRegistarV">Registrarme</string>
-
+    <string name="btnRegistrarV">Registrarme</string>
 
     <!--Registro de clientes-->
     <string name="txtRegistroC">Registro de cliente</string>
     <string name="etNombresC">Nombres completos</string>
-    <string name="btnRegistrarC">Registarme</string>
-
+    <string name="btnRegistrarC">Registrarme</string>
 
     <!--Login de vendedor-->
     <string name="txtLoginV">Login de vendedor</string>
@@ -58,26 +61,197 @@
     <string name="txtLoginC">Login de cliente</string>
     <string name="btnLoginC">Ingresar</string>
     <string name="tvRegistrarC">Registrarme</string>
+    <string name="tvRecuperarPass">Recuperar contraseña</string>
+
+    <!--Olvidé mi contraseña-->
+    <string name="txtRecuperarPass">Recuperar contraseña</string>
+    <string name="txtInstrucciones">Ingrese su correo electrónico para enviarle las instrucciones de recuperación.</string>
+    <string name="btnEnviarInstrucciones">Enviar</string>
+
+    <!--Actualizar contraseña-->
+    <string name="txtActualizarPass">Actualizar contraseña</string>
+    <string name="txtInstruccionesP">Su nueva contraseña debe ser diferente a la actual.</string>
+    <string name="etPasswordActual">Contraseña actual</string>
+    <string name="etPasswordNueva">Contraseña nueva</string>
+    <string name="etPasswordNuevaR">Repita nueva contraseña</string>
+    <string name="btnActualizarPassword">Actualizar</string>
 
     <!--Productos-->
     <string name="txtAgregarProductos">Agregar productos</string>
     <string name="etNombresP">Nombre del producto</string>
-    <string name="etDescripcionP">Descripcion</string>
-    <string name="Categoria">Categoria</string>
+    <string name="etDescripcionP">Descripción</string>
+    <string name="Categoria">Categoría</string>
     <string name="etPrecioP">Precio</string>
     <string name="txtDescuento">Descuento</string>
-    <string name="etPrecioConDescuentoP">Precio con descuento apli.</string>
+    <string name="etPorcentajeDescuentoP">Ingrese porcentaje. Ejm. 20, 50 , 60</string>
+    <string name="etPrecioConDescuentoP"></string>
     <string name="etNotaDescuentoP">Ejm: 10% Desc.</string>
+    <string name="btnCalcularPrecioDesc">Calcular</string>
+    <string name="precioConDescuentoPTXT">Precio con descuento apli.</string>
     <string name="btnAgregarProducto">Agregar producto</string>
 
+    <!--Agregar categorias-->
+    <string name="etCategoria">Ingrese categoría</string>
+    <string name="btnAgregarCat">Agregar categoría</string>
+
+    <!--Item categoria - v-->
+    <string name="item_nombre_c_v">Nombre de categoria</string>
+    <!--Item categoria - c-->
+    <string name="item_nombre_c_c">Nombre de categoria</string>
+    <string name="item_ver_productos">Ver productos</string>
+
+    <!--Item producto - v-->
+    <string name="item_nombre_p">Nombre del producto</string>
+    <string name="item_categoria_p">Categoría</string>
+    <string name="item_nota_p">50% OFF</string>
+    <string name="item_precio_p">00</string>
+    <string name="item_precio_p_desc">00</string>
+
+    <!--Item producto - c-->
+    <string name="item_agregar_carrito_p">Añadir al carrito</string>
+
+    <string name="txtProductoCat">Producto-categoria</string>
+    <string name="etBuscarProducto">Buscar producto</string>
+
+    <!--Registro con número telefónico-->
+    <string name="txtLoginTelC">Login con teléfono</string>
+    <string name="txtLoginMensaje">Necesitamos que ingrese su número telefónico para continuar</string>
+    <string name="etTelefonoC">Teléfono</string>
+    <string name="btnEnviarCodigo">Enviar código OTP</string>
+    <string name="etCodVer">Código</string>
+    <string name="btnVerificarCod">Verificar código</string>
+    <string name="tvReenviarCod">¿No llegó el código?. <b>Reenviar</b></string>
+
+    <!--Detalle del producto-->
+    <string name="txtDetalleProducto">Detalle de la orden</string>
+    <string name="tvPromCal">0.0/5</string>
+    <string name="tvTotalCal">(0)</string>
+    <string name="tvDejarCalificacion"><u>Escribir un comentario</u></string>
+    <string name="nombrePD">Nombre del producto</string>
+    <string name="descripcionPDTXT">Información general:</string>
+    <string name="descripcionPD">Descripción</string>
+    <string name="precioPD">00</string>
+    <string name="precioDescPD">00</string>
+    <string name="notaDescPD">50% OFF</string>
+
+    <string name="imagenContadorTv">1/5</string>
+
+    <!--Carrito de compras-->
+    <string name="nombrePCar">Nombre del producto</string>
+    <string name="descripcionPCar">Descripción</string>
+    <string name="notaDescPCar">10% OFF</string>
+    <string name="precioOriginalPCar">00</string>
+    <string name="precioDescPCar">00</string>
+    <string name="cantidadPCar">1</string>
+    <string name="precioFinalPCar">00</string>
+    <string name="btnAgregarCarrito">Agregar al carrito</string>
+
+    <!--Zoom a la imagen-->
+    <string name="cerrarZoom">Cerrar</string>
+
+    <string name="sumaProductos">Suma productos</string>
 
 
+    <string name="bienvenidaTXT">Bienvenido(a) Carlos!</string>
+    <string name="direccionTXT">Mi direccion</string>
+    <string name="txtCategorias">Nuestras categorias</string>
 
+    <!--Perfil del cliente-->
+    <string name="txtMiPerfil">Mi perfil</string>
+    <string name="nombresCPerfil">Nombres completos</string>
+    <string name="emailCPerfil">Email</string>
+    <string name="dniCPerfil">Dni</string>
+    <string name="telefonoCPerfil">Teléfono</string>
+    <string name="ubicacion">Ubicación</string>
+    <string name="fechaRegistroCPerfil">Fecha de registro</string>
+    <string name="proveedorCPerfil">Proveedor</string>
+    <string name="btnGuardarInfoC">Guardar</string>
+    <string name="btnActualizarContraseña">Cambiar contraseña</string>
 
+    <!--Mapas-->
+    <string name="txtSeleccionarUbicacion">Seleccione una ubicación</string>
+    <string name="Btn_listo">Confirmar</string>
 
+    <string name="btnCrearOrden">Confirmar orden</string>
 
+    <!--Orden de la compra-->
+    <string name="idOrdenItem">Id de la orden</string>
+    <string name="fechaOrdenItem">00/00/0000</string>
+    <string name="estadoOrdenItem">Estado</string>
+    <string name="costoOrdenItem">00</string>
 
+    <!--Detalle de la orden-->
+    <string name="tvidOrdenD">Id de la orden: </string>
+    <string name="idOrdenD"> -- </string>
+    <string name="tvfechaOrdenD">Fecha: </string>
+    <string name="fechaOrdenD"> -- </string>
+    <string name="tvestadoOrdenD">Estado: </string>
+    <string name="estadoOrdenD"> -- </string>
+    <string name="tvcantidadOrdenD">Cantidad de productos: </string>
+    <string name="cantidadOrdenD"> -- </string>
+    <string name="tvcostoOrdenD">Costo: </string>
+    <string name="costoOrdenD"> -- </string>
+    <string name="tvdireccionOrdenD">Dirección: </string>
+    <string name="direccionOrdenD"> -- </string>
+    <string name="txtProductosOrdenados">Productos ordenados</string>
 
+    <string name="itemNombreP">Nombre del producto</string>
+    <string name="itemPrecioP">Precio</string>
+    <string name="itemCantidadP">Cantidad</string>
+    <string name="itemPrecioFinalP">Precio total</string>
+
+    <string name="btnContinuarPago">Continuar</string>
+
+    <string name="etBuscarOrdenId">Buscar una orden</string>
+
+    <!--Detalle del cliente-->
+    <string name="tvInfoCliente">Información de cliente</string>
+    <string name="txtNombresC">Nombres: </string>
+    <string name="tvNombresC"> </string>
+    <string name="txtDniC">Dni: </string>
+    <string name="tvDniC"> </string>
+    <string name="txtTelC">Teléfono: </string>
+    <string name="tvTelC"> </string>
+    <string name="txtDireccionC">Dirección: </string>
+    <string name="tvDireccionC"> </string>
+    <string name="btnLlamar">Llamar</string>
+    <string name="btnSms">Sms</string>
+
+    <string name="verInfoCliente">Información del cliente</string>
+
+    <string name="txtActNomCat">Actualizar nombre cat.</string>
+    <string name="etNuevoNomCat">Nombre de cat.</string>
+    <string name="btnActualizarNomCat">Actualizar</string>
+
+    <string name="btnAnterior">Anterior</string>
+    <string name="btnSiguiente">Siguiente</string>
+
+    <!--Calificación de un producto-->
+    <string name="txtCalificacion">Calificar producto</string>
+    <string name="txtcalificar">¿Cómo calificarías este producto?</string>
+    <string name="tvNombreP">Funko Pop Spider-Man</string>
+    <string name="txtopinion">¿Qué te gustaría decir acerca de este producto?</string>
+    <string name="etOpinion">Comparte tu experiencia</string>
+
+    <string name="tvNombreUsuarioCal">Nombre de usuario</string>
+    <string name="tvReseniaCal">Reseña</string>
+    <string name="txtMostrarCal">Calificaciones</string>
+
+    <string name="txtEstados">Estados de órdenes</string>
+    <string name="tvEstado1">Solicitud recibida</string>
+    <string name="tvEstado2">Pago pendiente</string>
+    <string name="tvEstado3">En preparación</string>
+    <string name="tvEstado4">Entregado</string>
+    <string name="tvEstado5">Cancelado</string>
+
+    <string name="txtGanancias">Ganancias</string>
+    <string name="tvGanancias">0 USD</string>
+
+    <string name="txtPerdidas">Pérdidas</string>
+    <string name="tvPerdidas">0 USD</string>
+
+    <string name="btnVerClientes">Mis clientes</string>
+    <string name="txtListaClientes">Lista de clientes</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

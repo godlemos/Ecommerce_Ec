@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Vendedor.Nav_Fragments_Vendedor.FragmentCategoriasV">
+
+   <androidx.appcompat.widget.LinearLayoutCompat
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="15dp"
+       android:orientation="vertical">
+
+       <androidx.appcompat.widget.AppCompatImageView
+           android:id="@+id/imgCategorias"
+           android:src="@drawable/categorias"
+           android:layout_gravity="center"
+           android:layout_marginBottom="15dp"
+           android:layout_width="100dp"
+           android:layout_height="100dp"/>
+
+       <!--Nombre de la categoria-->
+
+       <com.google.android.material.textfield.TextInputLayout
+           android:id="@+id/tilCategoria"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_toStartOf="@id/btnAgregarCat"
+           android:layout_marginEnd="8dp">
+
+           <EditText
+               android:id="@+id/etCategoria"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:hint="@string/etCategoria"
+               android:inputType="textCapSentences"/>
+
+       </com.google.android.material.textfield.TextInputLayout>
+
+       <!--Agregar Categoria a la BD-->
+
+       <com.google.android.material.button.MaterialButton
+           android:id="@+id/btnAgregarCat"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignParentEnd="true"
+           android:text="@string/btnAgregarCat"
+           app:cornerRadius="8dp"/>
+
+       <!--Lista de categorias-->
+       
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/categoriasRv"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_below="@id/tilCategoria"
+           android:layout_marginTop="8dp"
+           tools:listitem="@layout/item_categoria_v"
+           app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+   </androidx.appcompat.widget.LinearLayoutCompat>
+</RelativeLayout>

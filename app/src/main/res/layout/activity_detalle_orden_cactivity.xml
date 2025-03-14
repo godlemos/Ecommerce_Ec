@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Cliente.Orden.DetalleOrdenCActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+
+        <ImageButton
+            android:id="@+id/Ib_regresar"
+            android:src="@drawable/ico_regresar"
+            android:background="@android:color/transparent"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="@string/txtDetalleProducto"
+            android:textSize="15sp"
+            android:layout_centerInParent="true"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:background="#ccc"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+    </RelativeLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="3dp"
+        app:contentPadding="5dp">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--Id de la orden-->
+            <TableRow>
+
+                <TextView
+                    android:text="@string/tvidOrdenD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/idOrdenD"
+                    android:text="@string/idOrdenD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"/>
+
+            </TableRow>
+
+            <!--Fecha -->
+            <TableRow>
+
+                <TextView
+                    android:text="@string/tvfechaOrdenD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/fechaOrdenD"
+                    android:text="@string/fechaOrdenD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"/>
+
+            </TableRow>
+
+            <!--Estado de la orden-->
+            <TableRow>
+
+                <TextView
+                    android:text="@string/tvestadoOrdenD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/estadoOrdenD"
+                    android:text="@string/estadoOrdenD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"/>
+
+            </TableRow>
+
+            <!--Cantidad de productos de la orden-->
+            <TableRow>
+
+                <TextView
+                    android:text="@string/tvcantidadOrdenD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/cantidadOrdenD"
+                    android:text="@string/cantidadOrdenD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"/>
+
+            </TableRow>
+
+            <!--Costo-->
+            <TableRow>
+
+                <TextView
+                    android:text="@string/tvcostoOrdenD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/costoOrdenD"
+                    android:text="@string/costoOrdenD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"/>
+
+            </TableRow>
+
+            <!--Dirección-->
+            <TableRow>
+
+                <TextView
+                    android:text="@string/tvdireccionOrdenD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/direccionOrdenD"
+                    android:text="@string/direccionOrdenD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"/>
+
+            </TableRow>
+
+        </TableLayout>
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnContinuarPago"
+        android:text="@string/btnContinuarPago"
+        android:textAllCaps="true"
+        app:cornerRadius="8dp"
+        android:backgroundTint="#52be80"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:text="@string/txtProductosOrdenados"
+        android:padding="5dp"
+        android:textAlignment="center"
+        android:background="@color/azul_marino_oscuro"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ordenesRv"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_producto_orden"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

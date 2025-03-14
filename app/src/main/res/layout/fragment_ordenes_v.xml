@@ -1,17 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Vendedor.Bottom_Nav_Fragments_Vendedor.FragmentOrdenesV">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
+        android:id="@+id/toolbarRL"
+        android:padding="5dp"
+        android:background="#f4f6f6"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="ORDENES"
-        android:gravity="center"
-        android:textSize="25sp"
-        android:textStyle="bold"/>
+        android:layout_height="55dp">
 
-</FrameLayout>
+        <!--Id de una orden-->
+        <EditText
+            android:id="@+id/etBuscarOrdenId"
+            android:hint="@string/etBuscarOrdenId"
+            android:layout_toStartOf="@+id/Ib_filtro_estado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!--Seleccionar un estado-->
+        <ImageButton
+            android:id="@+id/Ib_filtro_estado"
+            android:src="@drawable/ic_filtro"
+            android:background="@android:color/transparent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ordenesRv"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_orden_compra"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

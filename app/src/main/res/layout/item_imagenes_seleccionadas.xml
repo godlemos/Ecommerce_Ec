@@ -13,7 +13,7 @@
         android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/item_imagen"
+            android:id="@+id/imagen_item"
             android:scaleType="centerCrop"
             android:adjustViewBounds="true"
             android:src="@drawable/item_imagen"

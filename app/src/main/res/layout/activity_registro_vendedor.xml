@@ -6,102 +6,144 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".Vendedor.RegistroVendedorActivity">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="15dp">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:text="@string/txtRegistroV"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:src="@drawable/registro_vendedor"
-            android:layout_width="80dp"
-            android:layout_height="80dp" />
-
-        <!-- Nombres completos -->
-        <com.google.android.material.textfield.TextInputLayout
+        <!-- Header con imagen y títulos -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/headerCard"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="200dp"
+            app:cardBackgroundColor="@color/celeste_oscuro"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="0dp">
 
-            <EditText
-                android:id="@+id/etNombresV"
-                android:hint="@string/etNombresV"
-                android:drawableStart="@drawable/ico_nombres"
-                android:drawablePadding="10dp"
-                android:inputType="textPersonName|textCapWords"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
 
-        <!-- Email -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/registro_vendedor"/>
 
-            <EditText
-                android:id="@+id/etEmail"
-                android:inputType="textEmailAddress"
-                android:drawableStart="@drawable/ico_email"
-                android:drawablePadding="10dp"
-                android:hint="@string/etEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txtRegistroV"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="16dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-        <!-- Password -->
-        <com.google.android.material.textfield.TextInputLayout
+        <!-- Formulario de registro -->
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:passwordToggleEnabled="true">
+            android:layout_below="@id/headerCard"
+            android:layout_marginTop="-32dp"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp">
 
-            <EditText
-                android:id="@+id/etPassword"
-                android:hint="@string/etPassword"
-                android:drawableStart="@drawable/ico_password"
-                android:drawablePadding="10dp"
-                android:inputType="textPassword"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
 
-        <!-- Confirmar password -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:passwordToggleEnabled="true">
+                <!-- Nombres -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:startIconDrawable="@drawable/ico_nombres"
+                    app:startIconTint="@color/celeste_oscuro"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-            <EditText
-                android:id="@+id/etCPassword"
-                android:hint="@string/etCPassword"
-                android:drawableStart="@drawable/ico_password"
-                android:drawablePadding="10dp"
-                android:inputType="textPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </com.google.android.material.textfield.TextInputLayout>
+                    <EditText
+                        android:id="@+id/etNombresV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/etNombresV"
+                        android:inputType="textPersonName|textCapWords"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Registrar Vendedor -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnRegistarV"
-            android:text="@string/btnRegistarV"
-            app:cornerRadius="8dp"
-            android:textAllCaps="true"
-            android:layout_marginTop="15dp"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </androidx.appcompat.widget.LinearLayoutCompat>
+                <!-- Email -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:startIconDrawable="@drawable/ico_nombres"
+                    app:startIconTint="@color/celeste_oscuro"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <EditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/etEmail"
+                        android:inputType="textEmailAddress"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Password -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:startIconDrawable="@drawable/ico_nombres"
+                    app:startIconTint="@color/celeste_oscuro"
+                    app:passwordToggleEnabled="true"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <EditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/etPassword"
+                        android:inputType="textPassword"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Confirmar Password -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:startIconDrawable="@drawable/ico_nombres"
+                    app:startIconTint="@color/celeste_oscuro"
+                    app:passwordToggleEnabled="true"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <EditText
+                        android:id="@+id/etCPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/etCPassword"
+                        android:inputType="textPassword"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Botón de Registro -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRegistarV"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="@string/btnRegistrarV"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    android:layout_marginTop="24dp"
+                    app:cornerRadius="8dp"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
 
 </ScrollView>

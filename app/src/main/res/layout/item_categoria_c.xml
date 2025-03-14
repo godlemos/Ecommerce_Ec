@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="#fff"
+    app:cardCornerRadius="10dp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="7dp">
+
+        <!--Imagen de la categoria-->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imagenCateg"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/categorias"
+            android:layout_gravity="center"
+            android:layout_marginTop="2dp"
+            android:scaleType="centerCrop"/>
+
+        <!--Nombre de la categoria-->
+        <TextView
+            android:id="@+id/item_nombre_c_c"
+            android:text="@string/item_nombre_c_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="7dp"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:maxLines="1"/>
+
+        <!--Visualizar los productos de la categoría-->
+        <TextView
+            android:id="@+id/item_ver_productos"
+            android:text="@string/item_ver_productos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+            android:padding="7dp"
+            android:background="@drawable/fondo_celeste"/>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</com.google.android.material.card.MaterialCardView>

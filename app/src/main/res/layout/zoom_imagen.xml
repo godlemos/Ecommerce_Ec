@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="380dp"
+    android:layout_height="400dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center">
+
+    <com.github.chrisbanes.photoview.PhotoView
+        android:id="@+id/zoomImg"
+        android:background="#ccc"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/cerrarZoom"
+        android:text="@string/cerrarZoom"
+        app:cornerRadius="8dp"
+        android:textAllCaps="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

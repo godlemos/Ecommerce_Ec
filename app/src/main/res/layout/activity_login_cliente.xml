@@ -1,107 +1,211 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Cliente.LoginClienteActivity">
-    
-    <androidx.appcompat.widget.LinearLayoutCompat
+    android:background="@color/white">
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="15dp">
+        android:layout_height="wrap_content">
 
-
-        <TextView
-            android:text="@string/txtLoginC"
-            android:layout_gravity="center"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/login_cliente"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"/>
-
-        <!--Email-->
-
-        <com.google.android.material.textfield.TextInputLayout
+        <!-- Header con imagen y títulos -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/headerCard"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="200dp"
+            app:cardBackgroundColor="@color/azul_marino_oscuro"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="0dp">
 
-            <EditText
-                android:id="@+id/etEmail"
-                android:inputType="textEmailAddress"
-                android:drawableStart="@drawable/ico_email"
-                android:drawablePadding="5dp"
-                android:hint="@string/etEmail"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/cliente"/>
 
-        <!--Password-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txtLoginC"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="16dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-        <com.google.android.material.textfield.TextInputLayout
+        <!-- Formulario de login -->
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:passwordToggleEnabled="true">
+            android:layout_below="@id/headerCard"
+            android:layout_marginTop="-32dp"
+            android:layout_marginHorizontal="24dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp">
 
-            <EditText
-                android:id="@+id/etPassword"
-                android:hint="@string/etPassword"
-                android:inputType="textPassword"
-                android:drawableStart="@drawable/ico_password"
-                android:drawablePadding="5dp"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <!-- Email -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:startIconDrawable="@drawable/ico_nombres"
+                    app:startIconTint="@color/azul_marino_oscuro"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-        <!--Login de cliente-->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnLoginC"
-            android:text="@string/btnLoginC"
-            android:textAllCaps="true"
-            android:layout_gravity="center"
-            android:layout_marginTop="15dp"
-            app:cornerRadius="8dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+                    <EditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/etEmail"
+                        android:inputType="textEmailAddress"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-        <!--Txt-->
-        
-        <TextView
+                <!-- Password -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:startIconDrawable="@drawable/ico_nombres"
+                    app:startIconTint="@color/azul_marino_oscuro"
+                    app:passwordToggleEnabled="true"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-            android:layout_gravity="end"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/txtNoCuenta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+                    <EditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/etPassword"
+                        android:inputType="textPassword"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-        <!--Registrar cliente-->
+                <!-- Botón de Login -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLoginC"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="@string/btnLoginC"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    android:layout_marginTop="24dp"
+                    app:cornerRadius="8dp"
+                    android:backgroundTint="@color/azul_marino_oscuro"/>
 
-        <TextView
-            android:id="@+id/tvRegistrarC"
-            android:layout_gravity="end"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="10dp"
-            android:textSize="17sp"
-            android:textStyle="bold"
-            android:textColor="@color/celeste_oscuro"
-            android:text="@string/tvRegistrarC"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+                <!-- Login con Google -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="16dp"
+                    app:cardCornerRadius="8dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@android:color/darker_gray">
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+                    <LinearLayout
+                        android:id="@+id/btnLoginGoogle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="center">
 
-</RelativeLayout>
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_google_login"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Continuar con Google"
+                            android:textColor="@android:color/darker_gray"
+                            android:layout_marginStart="12dp"/>
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="16dp"
+                    app:cardCornerRadius="8dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@android:color/darker_gray">
+
+                    <LinearLayout
+                        android:id="@+id/btnLoginTel"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_tel_login"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Continuar con Teléfono"
+                            android:textColor="@android:color/darker_gray"
+                            android:layout_marginStart="12dp"/>
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+
+
+                <!-- Texto y botón de registro -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginTop="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/txtNoCuenta"
+                        android:textColor="@android:color/darker_gray"/>
+
+                    <TextView
+                        android:id="@+id/tvRegistrarC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvRegistrarC"
+                        android:textStyle="bold"
+                        android:textColor="@color/azul_marino_oscuro"
+                        android:layout_marginTop="8dp"
+                        android:textSize="16sp"/>
+
+                   <TextView
+                       android:id="@+id/tvRecuperarPass"
+                       android:layout_gravity="end"
+                       android:layout_marginTop="10dp"
+                       android:layout_marginEnd="10dp"
+                       android:textSize="17sp"
+                       android:textStyle="bold"
+                       android:text="@string/tvRecuperarPass"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</ScrollView>

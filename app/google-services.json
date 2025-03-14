@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "476322671612",
+    "firebase_url": "https://tienda-virtual-4f518-default-rtdb.firebaseio.com",
     "project_id": "tienda-virtual-4f518",
     "storage_bucket": "tienda-virtual-4f518.firebasestorage.app"
   },
@@ -12,7 +13,20 @@
           "package_name": "com.example.tiendavirtualapp_kotlin2"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "476322671612-2v2ugjg8dkkt2rppdtk8rkdmkj7tvko1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tiendavirtualapp_kotlin2",
+            "certificate_hash": "d3239dc2441bdc413b6ddfcd40f869d0cc74e02b"
+          }
+        },
+        {
+          "client_id": "476322671612-jf80oh2jgj2p4mr0uekq57diu2hpun53.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAUp9rHwim1UfzfVvelrVgDHao4d9PREv4"
@@ -20,7 +34,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "476322671612-jf80oh2jgj2p4mr0uekq57diu2hpun53.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

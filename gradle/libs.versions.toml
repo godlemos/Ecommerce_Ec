@@ -13,6 +13,16 @@ googleServiceV = "4.4.2"
 firebaseAuthV = "23.1.0"
 firebaseDatabaseV = "21.0.0"
 imagePickerV="2.1"
+glideV = "4.16.0"
+storageV = "21.0.1"
+authGoogleV = "21.3.0"
+lottieV = "4.2.1"
+ccpV = "2.7.0"
+photoViewV="2.3.0"
+circleImageV = "3.1.0"
+mapsV="18.2.0"
+placeV="3.5.0"
+
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -26,6 +36,16 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 firebaseAuth = {group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuthV"}
 firebaseDatabase = {group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabaseV"}
 imagePicker={group = "com.github.dhaval2404", name = "imagepicker", version.ref = "imagePickerV"}
+glide = {group= "com.github.bumptech.glide", name = "glide", version.ref = "glideV"}
+storage = {group = "com.google.firebase", name = "firebase-storage", version.ref = "storageV"}
+authGoogle = {group = "com.google.android.gms", name = "play-services-auth", version.ref = "authGoogleV"}
+lottie = {group = "com.airbnb.android", name = "lottie", version.ref = "lottieV"}
+ccp = {group = "com.hbb20", name = "ccp", version.ref = "ccpV"}
+photoView={group="com.github.chrisbanes", name = "PhotoView" , version.ref="photoViewV"}
+circleImage={group="de.hdodenhof",name="circleimageview", version.ref="circleImageV"}
+maps={group="com.google.android.gms",name = "play-services-maps", version.ref="mapsV"}
+places={group="com.google.android.libraries.places", name="places", version.ref="placeV"}
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
