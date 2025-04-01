@@ -32,9 +32,6 @@ class DetalleOrdenVActivity : AppCompatActivity() {
         // Obtener el ID de la orden del intent
         idOrden = intent.getStringExtra("idOrden") ?: ""
 
-        // Configurar RecyclerView
-        binding.rvItemsOrden.layoutManager = LinearLayoutManager(this)
-
         // Inicializar lista y adaptador
         itemsOrdenArrayList = ArrayList()
         adaptadorItemOrden = AdaptadorItemOrden(this, itemsOrdenArrayList)
@@ -142,39 +139,61 @@ class DetalleOrdenVActivity : AppCompatActivity() {
         // Limpiar lista
         itemsOrdenArrayList.clear()
 
-        // Referencia a los items de la orden
-        val refItems = FirebaseDatabase.getInstance().getReference("Ordenes").child(idOrden).child("Items")
+        // Referencia a los productos de la orden (cambiado de "Items" a "Productos" como en el cliente)
+        val refProductos = FirebaseDatabase.getInstance().getReference("Ordenes").child(idOrden).child("Productos")
+        
+        // Log para verificar la ruta de la referencia
+        println("DEBUG: Cargando productos de la orden desde: ${refProductos.toString()}")
 
-        refItems.addValueEventListener(object : ValueEventListener {
+        refProductos.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 // Limpiar lista
                 itemsOrdenArrayList.clear()
+                
+                // Log para verificar si hay datos
+                println("DEBUG: Snapshot tiene datos: ${snapshot.exists()}, Cantidad de hijos: ${snapshot.childrenCount}")
 
-                // Recorrer items
+                // Recorrer productos
                 for (ds in snapshot.children) {
                     try {
+                        // Log para verificar cada producto
+                        println("DEBUG: Producto encontrado: ${ds.key}")
+                        
                         val modeloItem = ModeloItemOrden()
                         modeloItem.idProducto = "${ds.child("idProducto").value}"
                         modeloItem.nombre = "${ds.child("nombre").value}"
-                        modeloItem.costo = "${ds.child("precio").value}"
+                        // Verificar si existe el campo precio o costo
+                        if (ds.hasChild("precio")) {
+                            modeloItem.costo = "${ds.child("precio").value}"
+                        } else if (ds.hasChild("costo")) {
+                            modeloItem.costo = "${ds.child("costo").value}"
+                        }
                         modeloItem.cantidad = "${ds.child("cantidad").value}"
                         modeloItem.precioFinal = "${ds.child("precioFinal").value}"
+                        
+                        // Log para verificar los datos del producto
+                        println("DEBUG: Producto cargado - Nombre: ${modeloItem.nombre}, Precio: ${modeloItem.costo}, Cantidad: ${modeloItem.cantidad}")
 
                         // Agregar a la lista
                         itemsOrdenArrayList.add(modeloItem)
                     } catch (e: Exception) {
+                        println("DEBUG: Error al cargar producto: ${e.message}")
                         Toast.makeText(this@DetalleOrdenVActivity, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
                     }
                 }
 
                 // Actualizar adaptador
                 adaptadorItemOrden.notifyDataSetChanged()
+                
+                // Log para verificar la cantidad de productos cargados
+                println("DEBUG: Total de productos cargados: ${itemsOrdenArrayList.size}")
 
                 // Mostrar cantidad de productos
                 binding.cantidadOrdenD.text = "${itemsOrdenArrayList.size}"
             }
 
             override fun onCancelled(error: DatabaseError) {
+                println("DEBUG: Error en la carga de productos: ${error.message}")
                 Toast.makeText(this@DetalleOrdenVActivity, "Error: ${error.message}", Toast.LENGTH_SHORT).show()
             }
         })

@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".Vendedor.Productos.ProductosCatVActivity">
+    tools:context=".Vendedor.ListaClientes.ListaClientesActivity">
 
     <RelativeLayout
         android:id="@+id/toolbarRL"
@@ -18,33 +17,32 @@
             android:id="@+id/Ib_regresar"
             android:src="@drawable/ico_regresar"
             android:background="@android:color/transparent"
-            android:padding="10dp"
             android:layout_centerVertical="true"
+            android:padding="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <TextView
-            android:id="@+id/txtProductoCat"
-            android:text="@string/txtProductoCat"
+            android:text="@string/txtListaClientes"
             android:layout_centerInParent="true"
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
             android:layout_alignParentBottom="true"
-            android:background="#000"/>
+            android:background="#ccc"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
 
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/productosRV"
+        android:id="@+id/clienteRV"
+        android:layout_below="@id/toolbarRL"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_cliente"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        tools:listitem="@layout/item_producto"
-        app:spanCount="2"/>
+        android:layout_height="match_parent"/>
 
-</LinearLayout>
+</RelativeLayout>

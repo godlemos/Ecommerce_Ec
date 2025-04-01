@@ -4,55 +4,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F0F4F8"
     tools:context=".Vendedor.Orden.DetalleOrdenVActivity">
 
+    <!-- Toolbar mejorado -->
     <RelativeLayout
         android:id="@+id/toolbarRL"
         android:layout_width="match_parent"
-        android:layout_height="55dp">
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:elevation="4dp">
 
         <ImageButton
             android:id="@+id/ibRegresar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_centerVertical="true"
-            android:background="@android:color/transparent"
-            android:padding="10dp"
-            android:src="@drawable/ico_regresar" />
+            android:layout_marginStart="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="12dp"
+            android:src="@drawable/ico_regresar"
+            android:contentDescription="Regresar" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="Detalle de la Orden"
+            android:textColor="#333333"
+            android:textSize="18sp"
             android:textStyle="bold" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_alignParentBottom="true"
-            android:background="#000" />
-
     </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbarRL">
+        android:layout_below="@+id/toolbarRL"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp"
+        android:paddingTop="8dp"
+        android:paddingHorizontal="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:padding="16dp">
 
             <!-- Información de la orden -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -64,124 +69,174 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Información de la Orden"
+                        android:textColor="#333333"
                         android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:drawableStart="@drawable/ico_orden"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_vertical"
+                        android:paddingBottom="12dp" />
 
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#E0E0E0"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- ID de la orden -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="120dp"
                             android:layout_height="wrap_content"
                             android:text="@string/tvidOrdenD"
+                            android:textColor="#555555"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/idOrdenD"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/idOrdenD" />
+                            android:text="@string/idOrdenD"
+                            android:textColor="#333333" />
                     </LinearLayout>
 
+                    <!-- Fecha de la orden -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="120dp"
                             android:layout_height="wrap_content"
                             android:text="@string/tvfechaOrdenD"
+                            android:textColor="#555555"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/fechaOrdenD"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/fechaOrdenD" />
+                            android:text="@string/fechaOrdenD"
+                            android:textColor="#333333" />
                     </LinearLayout>
 
+                    <!-- Estado de la orden -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="120dp"
                             android:layout_height="wrap_content"
                             android:text="@string/tvestadoOrdenD"
+                            android:textColor="#555555"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/estadoOrdenD"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/estadoOrdenD" />
+                            android:text="@string/estadoOrdenD"
+                            android:textColor="#333333"
+                            android:background="@drawable/estado_orden_background"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:paddingTop="2dp"
+                            android:paddingBottom="2dp" />
                     </LinearLayout>
 
+                    <!-- Cantidad de la orden -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="120dp"
                             android:layout_height="wrap_content"
                             android:text="@string/tvcantidadOrdenD"
+                            android:textColor="#555555"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/cantidadOrdenD"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/cantidadOrdenD" />
+                            android:text="@string/cantidadOrdenD"
+                            android:textColor="#333333" />
                     </LinearLayout>
 
+                    <!-- Costo de la orden -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="120dp"
                             android:layout_height="wrap_content"
                             android:text="@string/tvcostoOrdenD"
+                            android:textColor="#555555"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/costoOrdenD"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/costoOrdenD" />
+                            android:text="@string/costoOrdenD"
+                            android:textColor="#4CAF50"
+                            android:textStyle="bold" />
                     </LinearLayout>
 
+                    <!-- Dirección de la orden -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="8dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="120dp"
                             android:layout_height="wrap_content"
                             android:text="@string/tvdireccionOrdenD"
+                            android:textColor="#555555"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/direccionOrdenD"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/direccionOrdenD" />
+                            android:text="@string/direccionOrdenD"
+                            android:textColor="#333333" />
                     </LinearLayout>
 
-                    <Button
+                    <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnCambiarEstado"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Cambiar Estado de la Orden" />
+                        android:layout_marginTop="12dp"
+                        android:text="Cambiar Estado de la Orden"
+                        android:textAllCaps="false"
+                        app:cornerRadius="8dp"
+                        app:icon="@drawable/ico_editar"
+                        app:iconGravity="textStart" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -189,9 +244,9 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -203,106 +258,158 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/tvInfoCliente"
+                        android:textColor="#333333"
                         android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:drawableStart="@drawable/ico_cliente"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_vertical"
+                        android:paddingBottom="12dp" />
 
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#E0E0E0"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- Nombre del cliente -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="100dp"
                             android:layout_height="wrap_content"
                             android:text="@string/txtNombresC"
+                            android:textColor="#555555"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/tvNombresC"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/tvNombresC" />
+                            android:text="@string/tvNombresC"
+                            android:textColor="#333333" />
                     </LinearLayout>
 
+                    <!-- DNI del cliente -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="100dp"
                             android:layout_height="wrap_content"
                             android:text="@string/txtDniC"
+                            android:textColor="#555555"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/tvDniC"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/tvDniC" />
+                            android:text="@string/tvDniC"
+                            android:textColor="#333333" />
                     </LinearLayout>
 
+                    <!-- Teléfono del cliente -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="8dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="100dp"
                             android:layout_height="wrap_content"
                             android:text="@string/txtTelC"
+                            android:textColor="#555555"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/tvTelC"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/tvTelC" />
+                            android:text="@string/tvTelC"
+                            android:textColor="#333333" />
                     </LinearLayout>
 
+                    <!-- Botones de contacto -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:orientation="horizontal">
 
-                        <Button
+                        <com.google.android.material.button.MaterialButton
                             android:id="@+id/btnLlamar"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="4dp"
                             android:layout_weight="1"
-                            android:text="@string/btnLlamar" />
+                            android:text="@string/btnLlamar"
+                            android:textAllCaps="false"
+                            app:cornerRadius="8dp"
+                            app:icon="@drawable/ico_llamar"
+                            app:iconGravity="textStart"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
-                        <Button
+                        <com.google.android.material.button.MaterialButton
                             android:id="@+id/btnSms"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="4dp"
                             android:layout_weight="1"
-                            android:text="@string/btnSms" />
+                            android:text="@string/btnSms"
+                            android:textAllCaps="false"
+                            app:cornerRadius="8dp"
+                            app:icon="@drawable/ico_mensaje"
+                            app:iconGravity="textStart"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <!-- Productos ordenados -->
-            <TextView
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="@string/txtProductosOrdenados"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvItemsOrden"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:listitem="@layout/item_orden_producto" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#3F51B5"
+                        android:padding="12dp"
+                        android:text="@string/txtProductosOrdenados"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvItemsOrden"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:clipToPadding="false"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/item_producto_orden" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
         </LinearLayout>
     </ScrollView>
-
 </RelativeLayout> 

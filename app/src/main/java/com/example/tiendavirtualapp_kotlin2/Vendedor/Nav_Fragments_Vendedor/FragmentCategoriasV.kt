@@ -94,8 +94,8 @@ class FragmentCategoriasV : Fragment() {
         adaptador = AdaptadorCategoriaV(requireContext(), categoriasList)
         
         // Configurar RecyclerView
-        binding.categoriasRv.layoutManager = LinearLayoutManager(context)
-        binding.categoriasRv.adapter = adaptador
+        binding.rvCategorias.layoutManager = LinearLayoutManager(context)
+        binding.rvCategorias.adapter = adaptador
 
         // Configurar click listeners
         adaptador.setOnDeleteClickListener { categoria ->

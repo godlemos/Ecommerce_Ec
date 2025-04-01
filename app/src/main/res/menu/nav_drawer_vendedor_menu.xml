@@ -29,10 +29,7 @@
             android:icon="@drawable/ico_mi_tienda"/>
 
 
-        <item
-            android:id="@+id/op_resenia_v"
-            android:title="@string/op_resenia_v"
-            android:icon="@drawable/ico_resenias"/>
+
 
     </group>
 

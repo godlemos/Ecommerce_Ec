@@ -111,10 +111,6 @@ class MainActivityVendedor : AppCompatActivity(), NavigationView.OnNavigationIte
                 replaceFragment(FragmentProductosV())
             }
 
-            R.id.op_resenia_v ->{
-                replaceFragment(FragmentReseniasV())
-            }
-
             R.id.op_cerrar_sesion_v ->{
                 cerrarSesion()
             }

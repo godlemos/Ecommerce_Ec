@@ -26,42 +26,75 @@
         android:theme="@style/Theme.TiendaVirtualAppKotlin2"
         android:windowSoftInputMode="adjustResize"
         tools:targetApi="31">
-
-        <activity android:name=".Cliente.Orden.DetalleOrdenCActivity" android:exported="false" />
-        <activity android:name=".Cliente.ActualizarPasswordActivity" android:exported="false" />
-        <activity android:name=".Cliente.RecuperarPasswordActivity" android:exported="false" />
-        <activity android:name=".Mapas.SeleccionarUbicacionActivity" android:exported="false" />
-        <activity android:name=".DetalleProducto.DetalleProductoActivity" android:exported="false" />
-        <activity android:name=".Cliente.ProductosC.ProductosCatCActivity" android:exported="false" />
-        <activity android:name=".Cliente.LoginTelActivity" android:exported="false" />
-
-        <!-- SplashScreenActivity como la actividad principal -->
-        <activity android:name=".SplashScreenActivity" android:exported="true">
+        <activity
+            android:name=".Vendedor.ListaClientes.ListaClientesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Cliente.Orden.DetalleOrdenCActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Cliente.ActualizarPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Cliente.RecuperarPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Mapas.SeleccionarUbicacionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetalleProducto.DetalleProductoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Cliente.ProductosC.ProductosCatCActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Cliente.LoginTelActivity"
+            android:exported="false" /> <!-- SplashScreenActivity como la actividad principal -->
+        <activity
+            android:name=".SplashScreenActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- SeleccionarTipoActivity como segunda actividad -->
-        <activity android:name=".SeleccionarTipoActivity" android:exported="true" />
-
-        <!-- Otras actividades -->
-        <activity android:name=".Vendedor.Productos.AgregarProductoActivity" android:exported="false" />
-        <activity android:name=".Vendedor.Productos.ProductosCatVActivity" android:exported="false" />
-        <activity android:name=".Cliente.LoginClienteActivity" android:exported="false" />
-        <activity android:name=".Cliente.RegistroClienteActivity" android:exported="false" />
-        <activity android:name=".Vendedor.LoginVendedorActivity" android:exported="false" />
-        <activity android:name=".Vendedor.RegistroVendedorActivity" android:exported="false" />
-        <activity android:name=".Vendedor.MainActivityVendedor" android:exported="true" />
-        <activity android:name=".Cliente.MainActivityCliente" android:exported="true" />
-        <activity android:name=".Vendedor.Orden.DetalleOrdenVActivity" android:exported="false" />
-
-        <!-- Se agrega la actividad CalificarProductoActivity -->
-        <activity android:name=".Calificacion.CalificarProductoActivity" android:exported="false" />
-
-        <!-- Se agrega la actividad MostrarCalificacionesActivity -->
-        <activity android:name=".Calificacion.MostrarCalificacionesActivity" android:exported="false" />
+        </activity> <!-- SeleccionarTipoActivity como segunda actividad -->
+        <activity
+            android:name=".SeleccionarTipoActivity"
+            android:exported="true" /> <!-- Otras actividades -->
+        <activity
+            android:name=".Vendedor.Productos.AgregarProductoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Vendedor.Productos.ProductosCatVActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Cliente.LoginClienteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Cliente.RegistroClienteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Vendedor.LoginVendedorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Vendedor.RegistroVendedorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Vendedor.MainActivityVendedor"
+            android:exported="true" />
+        <activity
+            android:name=".Cliente.MainActivityCliente"
+            android:exported="true" />
+        <activity
+            android:name=".Vendedor.Orden.DetalleOrdenVActivity"
+            android:exported="false" /> <!-- Se agrega la actividad CalificarProductoActivity -->
+        <activity
+            android:name=".Calificacion.CalificarProductoActivity"
+            android:exported="false" /> <!-- Se agrega la actividad MostrarCalificacionesActivity -->
+        <activity
+            android:name=".Calificacion.MostrarCalificacionesActivity"
+            android:exported="false" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

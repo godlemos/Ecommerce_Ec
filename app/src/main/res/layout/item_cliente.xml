@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--Imagen de perfil-->
+        <ImageView
+            android:id="@+id/imagenC"
+            android:layout_marginTop="2dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_perfil"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+
+        <!--Botón para llamar-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLlamar"
+            android:text="@string/btnLlamar"
+            android:layout_below="@id/imagenC"
+            app:cornerRadius="8dp"
+            android:layout_toStartOf="@id/nombresCPerfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!--Botón para enviar SMS-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSms"
+            android:text="@string/btnSms"
+            android:layout_below="@id/btnLlamar"
+            app:cornerRadius="8dp"
+            android:layout_marginEnd="2dp"
+            android:layout_toStartOf="@id/nombresCPerfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!--Nombres-->
+        <TextView
+            android:id="@+id/nombresCPerfil"
+            android:text="@string/nombresCPerfil"
+            android:layout_toEndOf="@id/imagenC"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/azul_marino_oscuro"
+            android:layout_marginTop="2dp"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!--Email-->
+        <TextView
+            android:id="@+id/emailCPerfil"
+            android:text="@string/emailCPerfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/imagenC"
+            android:layout_below="@id/nombresCPerfil"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:textSize="16sp"/>
+
+        <!--Dni-->
+        <TextView
+            android:id="@+id/dniCPerfil"
+            android:text="@string/dniCPerfil"
+            android:layout_toEndOf="@id/imagenC"
+            android:layout_below="@id/emailCPerfil"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!--Dirección-->
+        <TextView
+            android:id="@+id/ubicacion"
+            android:text="@string/ubicacion"
+            android:layout_toEndOf="@id/imagenC"
+            android:layout_below="@id/dniCPerfil"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!--Teléfono-->
+        <TextView
+            android:id="@+id/telefonoCPerfil"
+            android:text="@string/telefonoCPerfil"
+            android:layout_toEndOf="@id/imagenC"
+            android:layout_below="@id/ubicacion"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!--Proveedor-->
+        <TextView
+            android:id="@+id/proveedorCPerfil"
+            android:text="@string/proveedorCPerfil"
+            android:layout_toEndOf="@id/imagenC"
+            android:layout_below="@id/telefonoCPerfil"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:textSize="16sp"
+            android:textColor="@color/azul_marino_oscuro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

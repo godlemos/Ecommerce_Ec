@@ -36,6 +36,7 @@
     <string name="op_mis_ordenes_c">Mis órdenes</string>
 
     <string name="txt_bienvenida">Bienvenido(a)</string>
+    <string name="txt_bienvenida_v">Bienvenido Vendedor</string>
 
 
     <!--Registro de vendedor-->
@@ -193,7 +194,7 @@
     <string name="costoOrdenD"> -- </string>
     <string name="tvdireccionOrdenD">Dirección: </string>
     <string name="direccionOrdenD"> -- </string>
-    <string name="txtProductosOrdenados">Productos ordenados</string>
+    <string name="txtProductosOrdenados">Productos Ordenados</string>
 
     <string name="itemNombreP">Nombre del producto</string>
     <string name="itemPrecioP">Precio</string>

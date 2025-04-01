@@ -49,17 +49,28 @@ class FragmentMisOrdenesC : Fragment() {
         ref.orderByChild("ordenadoPor").equalTo(uid)
             .addValueEventListener(object : ValueEventListener{
                 override fun onDataChange(snapshot: DataSnapshot) {
+                    ordenesArrayList.clear()
+                    
                     for (ds in snapshot.children){
                         val modelo = ds.getValue(ModeloOrdenCompra::class.java)
                         ordenesArrayList.add(modelo!!)
                     }
 
-                    ordenAdaptador = AdaptadorOrdenCompra(mContext, ordenesArrayList)
-                    binding.ordenesRv.adapter = ordenAdaptador
+                    // Mostrar mensaje cuando no hay órdenes
+                    if (ordenesArrayList.isEmpty()) {
+                        binding.tvNoOrdenes.visibility = View.VISIBLE
+                        binding.ordenesRv.visibility = View.GONE
+                    } else {
+                        binding.tvNoOrdenes.visibility = View.GONE
+                        binding.ordenesRv.visibility = View.VISIBLE
+                        
+                        ordenAdaptador = AdaptadorOrdenCompra(mContext, ordenesArrayList)
+                        binding.ordenesRv.adapter = ordenAdaptador
+                    }
                 }
 
                 override fun onCancelled(error: DatabaseError) {
-                    TODO("Not yet implemented")
+                    // Manejar error
                 }
             })
     }

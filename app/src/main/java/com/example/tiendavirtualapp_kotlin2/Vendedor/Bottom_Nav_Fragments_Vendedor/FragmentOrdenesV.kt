@@ -2,10 +2,6 @@ package com.example.tiendavirtualapp_kotlin2.Vendedor.Bottom_Nav_Fragments_Vende
 
 import android.content.Context
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.text.Editable
-import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.Menu
@@ -28,9 +24,6 @@ class FragmentOrdenesV : Fragment() {
     private lateinit var ordenesArrayList : ArrayList<ModeloOrdenCompra>
     private lateinit var ordenAdaptador : AdaptadorOrdenCompraV
 
-    private val handler = Handler(Looper.getMainLooper())
-    private var searchRunnable : Runnable? = null
-
     override fun onAttach(context: Context) {
         this.mContext = context
         super.onAttach(context)
@@ -48,64 +41,6 @@ class FragmentOrdenesV : Fragment() {
         binding.IbFiltroEstado.setOnClickListener {
             filtrarOrdenMenu()
         }
-
-        binding.etBuscarOrdenId.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-
-            }
-
-            override fun onTextChanged( id : CharSequence?, start: Int, before: Int, count: Int) {
-                val idOrden = id.toString()
-
-                searchRunnable?.let { handler.removeCallbacks (it)  }
-
-                searchRunnable = Runnable {
-                    if (idOrden.isNotEmpty()){
-                        /*Comprobamos que no sea un campo vacío*/
-                        buscarOrdenPorId(idOrden)
-                    }else{
-                        /*Si el campo está vacío que muestre todas las órdenes*/
-                        verOrdenes()
-                    }
-                }
-
-                handler.postDelayed(searchRunnable!! , 1000)
-
-
-
-            }
-
-            override fun afterTextChanged(s: Editable?) {
-
-            }
-        })
-    }
-
-    private fun buscarOrdenPorId(idOrden: String) {
-        ordenesArrayList = ArrayList()
-
-        val ref = FirebaseDatabase.getInstance().getReference("Ordenes")
-            .orderByChild("idOrden").startAt(idOrden).endAt(idOrden + "\uf8ff")
-        ref.addValueEventListener(object : ValueEventListener{
-            override fun onDataChange(snapshot: DataSnapshot) {
-                if (snapshot.exists()){
-                    /*Si el id de la orden existe*/
-                    ordenesArrayList.clear()
-                    for (ds in snapshot.children){
-                        val modelo = ds.getValue(ModeloOrdenCompra::class.java)
-                        ordenesArrayList.add(modelo!!)
-                    }
-
-                    ordenAdaptador = AdaptadorOrdenCompraV(mContext , ordenesArrayList)
-                    binding.ordenesRv.adapter = ordenAdaptador
-                }
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
-            }
-        })
-
     }
 
     private fun filtrarOrdenMenu() {
@@ -134,7 +69,6 @@ class FragmentOrdenesV : Fragment() {
 
             return@setOnMenuItemClickListener true
         }
-
     }
 
     private fun filtroOrden(estado : String) {
@@ -159,10 +93,9 @@ class FragmentOrdenesV : Fragment() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                // Manejar error
             }
         })
-
     }
 
     private fun verOrdenes() {
@@ -181,9 +114,8 @@ class FragmentOrdenesV : Fragment() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                // Manejar error
             }
         })
     }
-
 }

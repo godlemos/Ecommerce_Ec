@@ -6,58 +6,59 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Vendedor.Nav_Fragments_Vendedor.FragmentCategoriasV">
 
-   <androidx.appcompat.widget.LinearLayoutCompat
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:layout_marginTop="15dp"
-       android:orientation="vertical">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical">
 
-       <androidx.appcompat.widget.AppCompatImageView
-           android:id="@+id/imgCategorias"
-           android:src="@drawable/categorias"
-           android:layout_gravity="center"
-           android:layout_marginBottom="15dp"
-           android:layout_width="100dp"
-           android:layout_height="100dp"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgCategorias"
+            android:src="@drawable/categorias"
+            android:layout_gravity="center"
+            android:layout_marginBottom="15dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
 
-       <!--Nombre de la categoria-->
+        <!--Nombre de la categoría-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp">
 
-       <com.google.android.material.textfield.TextInputLayout
-           android:id="@+id/tilCategoria"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:layout_toStartOf="@id/btnAgregarCat"
-           android:layout_marginEnd="8dp">
+            <EditText
+                android:id="@+id/etCategoria"
+                android:hint="@string/etCategoria"
+                android:inputType="textCapWords"
+                android:drawableStart="@drawable/ico_categoria"
+                android:drawablePadding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-           <EditText
-               android:id="@+id/etCategoria"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:hint="@string/etCategoria"
-               android:inputType="textCapSentences"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-       </com.google.android.material.textfield.TextInputLayout>
+        <!--Agregar categoria a la BD-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAgregarCat"
+            android:text="@string/btnAgregarCat"
+            app:cornerRadius="8dp"
+            android:textAllCaps="true"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
-       <!--Agregar Categoria a la BD-->
+        <!--Lista de categorías-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCategorias"
+            android:layout_margin="5dp"
+            tools:listitem="@layout/item_categoria_v"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
-       <com.google.android.material.button.MaterialButton
-           android:id="@+id/btnAgregarCat"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_alignParentEnd="true"
-           android:text="@string/btnAgregarCat"
-           app:cornerRadius="8dp"/>
 
-       <!--Lista de categorias-->
-       
-       <androidx.recyclerview.widget.RecyclerView
-           android:id="@+id/categoriasRv"
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:layout_below="@id/tilCategoria"
-           android:layout_marginTop="8dp"
-           tools:listitem="@layout/item_categoria_v"
-           app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
-   </androidx.appcompat.widget.LinearLayoutCompat>
 </RelativeLayout>

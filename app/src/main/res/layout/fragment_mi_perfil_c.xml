@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F5F5F5"
     tools:context=".Cliente.Nav_Fragments_Cliente.FragmentMiPerfilC">
 
     <LinearLayout
@@ -12,16 +13,20 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!--Toolbar-->
+        <!-- Toolbar mejorado -->
         <RelativeLayout
             android:id="@+id/toolbarRL"
             android:layout_width="match_parent"
-            android:layout_height="55dp">
+            android:layout_height="60dp"
+            android:background="@color/white"
+            android:elevation="4dp">
 
             <TextView
                 android:text="@string/txtMiPerfil"
                 android:layout_centerInParent="true"
                 android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#333333"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -29,138 +34,242 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_alignParentBottom="true"
-                android:background="#ccc"/>
+                android:background="#E0E0E0"/>
 
         </RelativeLayout>
 
-        <!--Información del usuario - cliente-->
-        <LinearLayout
+        <!-- Tarjeta de perfil -->
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:orientation="vertical">
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/imgCPerfil"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/img_perfil"
-                android:layout_gravity="center"
-                android:layout_marginBottom="15dp"/>
-
-            <com.google.android.material.textfield.TextInputLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-                <!--Nombres-->
-                <EditText
-                    android:id="@+id/nombresCPerfil"
-                    android:hint="@string/nombresCPerfil"
-                    android:inputType="textPersonName"
+                <!-- Imagen de perfil con fondo -->
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="16dp">
+
+                    <View
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/circle_background"/>
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/imgCPerfil"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/img_perfil"
+                        android:layout_gravity="center"/>
+                </FrameLayout>
+
+                <!-- Campos de información personal -->
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:boxCornerRadiusBottomEnd="8dp"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusTopStart="8dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:startIconDrawable="@drawable/ico_usuario"
+                    app:startIconTint="@color/azul_marino_oscuro">
 
-            </com.google.android.material.textfield.TextInputLayout>
+                    <!-- Nombres -->
+                    <EditText
+                        android:id="@+id/nombresCPerfil"
+                        android:hint="@string/nombresCPerfil"
+                        android:inputType="textPersonName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <!--Email-->
-                <EditText
-                    android:id="@+id/emailCPerfil"
-                    android:hint="@string/emailCPerfil"
-                    android:inputType="textEmailAddress"
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:boxCornerRadiusBottomEnd="8dp"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusTopStart="8dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:startIconDrawable="@drawable/ico_email"
+                    app:startIconTint="@color/azul_marino_oscuro">
 
+                    <!-- Email -->
+                    <EditText
+                        android:id="@+id/emailCPerfil"
+                        android:hint="@string/emailCPerfil"
+                        android:inputType="textEmailAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <!--DNI-->
-                <EditText
-                    android:id="@+id/dniCPerfil"
-                    android:hint="@string/dniCPerfil"
-                    android:inputType="number"
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:boxCornerRadiusBottomEnd="8dp"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusTopStart="8dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:startIconDrawable="@drawable/ico_dni"
+                    app:startIconTint="@color/azul_marino_oscuro">
 
-            </com.google.android.material.textfield.TextInputLayout>
+                    <!-- DNI -->
+                    <EditText
+                        android:id="@+id/dniCPerfil"
+                        android:hint="@string/dniCPerfil"
+                        android:inputType="number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <!--Teléfono-->
-                <EditText
-                    android:id="@+id/telefonoCPerfil"
-                    android:hint="@string/telefonoCPerfil"
-                    android:inputType="phone"
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:boxCornerRadiusBottomEnd="8dp"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusTopStart="8dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:startIconDrawable="@drawable/ico_telefono"
+                    app:startIconTint="@color/azul_marino_oscuro">
 
-            </com.google.android.material.textfield.TextInputLayout>
+                    <!-- Teléfono -->
+                    <EditText
+                        android:id="@+id/telefonoCPerfil"
+                        android:hint="@string/telefonoCPerfil"
+                        android:inputType="phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                app:boxCornerRadiusBottomStart="8dp"
-                app:boxCornerRadiusBottomEnd="8dp"
-                app:boxCornerRadiusTopEnd="8dp"
-                app:boxCornerRadiusTopStart="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <AutoCompleteTextView
-                    android:id="@+id/ubicacion"
-                    android:hint="@string/ubicacion"
-                    android:inputType="none"
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:boxCornerRadiusBottomEnd="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusTopStart="8dp"
+                    android:layout_marginBottom="16dp"
+                    app:startIconDrawable="@drawable/ico_ubicacion"
+                    app:startIconTint="@color/azul_marino_oscuro"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content">
 
-            </com.google.android.material.textfield.TextInputLayout>
+                    <AutoCompleteTextView
+                        android:id="@+id/ubicacion"
+                        android:hint="@string/ubicacion"
+                        android:inputType="none"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <!--Fecha de registro-->
-            <TextView
-                android:id="@+id/fechaRegistroCPerfil"
-                android:hint="@string/fechaRegistroCPerfil"
-                android:textSize="18sp"
-                android:layout_marginTop="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                <!-- Información adicional -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#F8F8F8"
+                    android:padding="12dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="8dp"
+                    android:elevation="1dp"
+                    android:radius="8dp">
 
-            <!--Proveedor-->
-            <TextView
-                android:id="@+id/proveedorCPerfil"
-                android:hint="@string/proveedorCPerfil"
-                android:textSize="18sp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                    <!-- Fecha de registro -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="8dp">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnGuardarInfoC"
-                android:text="@string/btnGuardarInfoC"
-                android:layout_gravity="center"
-                app:cornerRadius="8dp"
-                android:textAllCaps="true"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"/>
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ico_calendario"
+                            android:tint="@color/azul_marino_oscuro"
+                            android:layout_marginEnd="8dp"/>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnActualizarContraseña"
-                android:text="@string/btnActualizarContraseña"
-                app:cornerRadius="8dp"
-                android:layout_gravity="center"
-                android:textAllCaps="true"
-                android:layout_width="250dp"
-                android:visibility="gone"
-                android:layout_height="wrap_content"/>
+                        <TextView
+                            android:id="@+id/fechaRegistroCPerfil"
+                            android:hint="@string/fechaRegistroCPerfil"
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
 
-        </LinearLayout>
+                    <!-- Proveedor -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
 
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ico_proveedor"
+                            android:tint="@color/azul_marino_oscuro"
+                            android:layout_marginEnd="8dp"/>
+
+                        <TextView
+                            android:id="@+id/proveedorCPerfil"
+                            android:hint="@string/proveedorCPerfil"
+                            android:textSize="16sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Botones de acción -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnGuardarInfoC"
+                    android:text="@string/btnGuardarInfoC"
+                    android:layout_gravity="center"
+                    app:cornerRadius="8dp"
+                    android:textAllCaps="false"
+                    android:backgroundTint="@color/azul_marino_oscuro"
+                    android:paddingVertical="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:icon="@drawable/ico_guardar"
+                    app:iconGravity="textStart"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnActualizarContraseña"
+                    android:text="@string/btnActualizarContraseña"
+                    app:cornerRadius="8dp"
+                    android:layout_gravity="center"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#FF9800"
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    app:icon="@drawable/ico_password"
+                    app:iconGravity="textStart"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Espacio al final para mejor visualización -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="24dp"/>
     </LinearLayout>
-
 </ScrollView>

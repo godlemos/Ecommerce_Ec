@@ -56,7 +56,7 @@ class FragmentMisProductosV : Fragment() {
                     productoArrayList.add(modeloProducto!!)
                 }
                 adaptadorProductos = AdaptadorProducto(mContext, productoArrayList)
-                binding.productosRV.adapter = adaptadorProductos
+                binding.categoriasRV.adapter = adaptadorProductos
             }
 
             override fun onCancelled(error: DatabaseError) {

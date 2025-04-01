@@ -56,9 +56,7 @@ class AdaptadorCategoriaV : RecyclerView.Adapter<AdaptadorCategoriaV.HolderCateg
             .placeholder(R.drawable.categorias)
             .into(holder.item_img_c_v)
 
-        holder.item_act_categ_c_v.setOnClickListener {
-            actualizarNomCat(id)
-        }
+
 
         holder.item_eliminar_c.setOnClickListener {
             //Toast.makeText(mContext, "Eliminar categoria",Toast.LENGTH_SHORT).show()
@@ -160,7 +158,6 @@ class AdaptadorCategoriaV : RecyclerView.Adapter<AdaptadorCategoriaV.HolderCateg
 
     inner class HolderCategoriaV(itemView : View) : RecyclerView.ViewHolder(itemView){
         var item_nombre_c_v = binding.itemNombreCV
-        var item_act_categ_c_v = binding.itemActualizarCat
         var item_eliminar_c = binding.itemEliminarC
         var item_img_c_v = binding.imagenCategCV
         var item_ver_productos = binding.itemVerProductos

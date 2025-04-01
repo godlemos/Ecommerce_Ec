@@ -3,6 +3,8 @@ package com.example.tiendavirtualapp_kotlin2.Cliente
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -19,6 +21,10 @@ import com.example.tiendavirtualapp_kotlin2.databinding.ActivityMainClienteBindi
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import androidx.appcompat.app.AlertDialog
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class MainActivityCliente : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener {
 
@@ -50,6 +56,9 @@ class MainActivityCliente : AppCompatActivity() , NavigationView.OnNavigationIte
         binding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
         
+        // Obtener el nombre del usuario y mostrarlo en el TextView de bienvenida
+        obtenerNombreUsuario()
+        
         // Verificar si se debe cargar un fragmento específico
         val fragmentToLoad = intent.getStringExtra("fragmentToLoad")
         if (fragmentToLoad == "misOrdenes") {
@@ -59,6 +68,26 @@ class MainActivityCliente : AppCompatActivity() , NavigationView.OnNavigationIte
         } else {
             replaceFragment(FragmentInicioC())
         }
+    }
+
+    private fun obtenerNombreUsuario() {
+        val headerView = binding.navigationView.getHeaderView(0)
+        val tvBienvenida = headerView.findViewById<TextView>(R.id.tvBienvenida)
+        
+        val ref = FirebaseDatabase.getInstance().getReference("Usuarios")
+        ref.child("${firebaseAuth?.uid}")
+            .addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val nombres = "${snapshot.child("nombres").value}"
+                    if (nombres != "null") {
+                        tvBienvenida.text = "Bienvenido(a) ${nombres}"
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    // Manejar error
+                }
+            })
     }
 
     private fun comprobarSesion(){

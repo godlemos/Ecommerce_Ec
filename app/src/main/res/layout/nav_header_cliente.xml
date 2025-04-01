@@ -12,6 +12,7 @@
 
 
     <TextView
+        android:id="@+id/tvBienvenida"
         android:text="@string/txt_bienvenida"
         android:textColor="@color/white"
         android:textStyle="bold"
